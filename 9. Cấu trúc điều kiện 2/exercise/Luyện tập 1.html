@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Kiểm tra a chia hết cho b</h3>
+<input type="number" id="a">
+<input type="number" id="b">
+<button onclick="checkab()">Check</button>
+<p id="showCheckab"></p>
+<hr>
+<h3>In ra tuổi học sinh</h3>
+<input type="number" id="t" placeholder="Nhập số tuổi">
+<button onclick="printt()">In</button>
+<p id="printt"></p>
+<hr>
+<h3>Kiểm tra số nguyên dương</h3>
+<input type="number" id="i" placeholder="Nhập vào số bất kỳ">
+<button onclick="checkYingYang()">In</button>
+<p id="checkYingYang"></p>
+<hr>
+<h3>Tìm số lớn nhất</h3>
+<input type="number" id="x" placeholder="Nhập vào số bất kỳ">
+<input type="number" id="y" placeholder="Nhập vào số bất kỳ">
+<input type="number" id="z" placeholder="Nhập vào số bất kỳ">
+<button oninput="findMax()"></button>
+<p id="findMax"></p>
+
+<script>
+function checkab() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    if (a%b===0) {
+        document.getElementById("showCheckab").innerText = "số "+a+" chia hết cho "+b;
+    } else {document.getElementById("showCheckab").innerText = "số "+a+" không chia hết cho "+b}
+}
+function printt() {
+    let t = document.getElementById("t").value;
+    if (t<15) {
+        document.getElementById("printt").innerText = t;
+    } else {
+        document.getElementById("printt").innerText = "đã đủ tuổi vào lớp 10";
+    }
+}
+function checkYingYang() {
+    let i = document.getElementById('i').value;
+    if (i>0) {
+        document.getElementById('checkYingYang').innerText = "số "+i+" lớn hơn 0";
+    }else {
+        document.getElementById('checkYingYang').innerText = "số "+i+" nhỏ hơn 0";
+    }
+}
+function findMax() {
+    let x = document.getElementById("x").value;
+    let y = document.getElementById("y").value;
+    let z = document.getElementById("z").value;
+    if (x>y) {
+        if (y>z) {
+            document.getElementById("findMax").innerText = x + "là số lớn nhất"
+        }
+    } else {
+        if ()
+    }
+}
+</script>
+</body>
+</html>

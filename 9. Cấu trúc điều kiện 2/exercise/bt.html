@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr,td{
+            color: blue;
+            padding: 5px;
+            border: 1px gray solid;
+            text-align: center;
+        }
+        table{
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+<h3>Tính chỉ số cân nặng của cơ thể</h3>
+<input type="number" id="bmi">
+<input type="button" onclick="bmi()" value="Chỉ số cân nặng">
+<p id="showbmi"></p>
+<hr>
+<h3>TÍnh số ngày</h3>
+<input type="number" id="date">
+<input type="button" onclick="date()" value="Tính số ngày">
+<p id="showdate"></p>
+<hr>
+<h3>Máy tính đơn giản</h3>
+<input id="num" disabled style="width: 490px">
+<table border="1" width="500px" >
+    <tr>
+        <td onclick="inputNumber(1)">1</td>
+        <td onclick="inputNumber(2)">2</td>
+        <td onclick="inputNumber(3)">3</td>
+        <td onclick="inputNumber('+')">+</td>
+    </tr>
+    <tr>
+        <td onclick="inputNumber(4)">4</td>
+        <td onclick="inputNumber(5)">5</td>
+        <td onclick="inputNumber(6)">6</td>
+        <td onclick="inputNumber('-')">-</td>
+    </tr>
+    <tr>
+        <td onclick="inputNumber(7)">7</td>
+        <td onclick="inputNumber(8)">8</td>
+        <td onclick="inputNumber(9)">9</td>
+        <td onclick="inputNumber('*')">*</td>
+    </tr>
+    <tr>
+        <td onclick="clearNumber()">C</td>
+        <td onclick="inputNumber(0)">0</td>
+        <td onclick="calculator()">=</td>
+        <td onclick="inputNumber('/')">/</td>
+    </tr>
+</table>
+<script>
+    function bmi() {
+        let bmi = document.getElementById("bmi").value;
+        if (bmi < 18)
+            document.getElementById("showbmi").innerText="Underweight";
+        else if (bmi < 25.0)
+            document.getElementById("showbmi").innerText="Normal";
+        else if (bmi < 30.0)
+            document.getElementById("showbmi").innerText="Overweight";
+        else
+            document.getElementById("showbmi").innerText="Obese";
+    }
+    function date() {
+        let n = parseInt(document.getElementById("date").value);
+        switch (n) {
+            case 1:
+            case 3:
+            case 7:
+            case 5:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("showdate").innerText = "Tháng " +n+" có 31 ngày";
+                break;
+            case 2:
+                 document.getElementById("showdate").innerText = "Tháng " +n+" có 28 hoặc 29 ngày";
+                 break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("showdate").innerText = "Tháng "+n+" có 30 ngày";
+                break;
+            default:
+                document.getElementById("showdate").innerText = "Số bạn nhập không phù hợp";
+                break;
+        }
+    }
+    //máy tính
+    let check =true;
+    function clearNumber() {
+        document.getElementById("num").value = "";
+    }
+    function inputNumber(number) {
+        if (!check) {
+            if (number === "+"||number === "-"||number === "*"||number === "/") {
+                document.getElementById("num").value += number;
+            } else {
+                document.getElementById("num").value = number;
+            }
+        }else {
+            document.getElementById("num").value += number;
+        }
+        check = true;
+    }
+    function calculator() {
+        document.getElementById("num").value = eval(document.getElementById("num").value);
+        check = false;
+    }
+</script>
+</body>
+</html>

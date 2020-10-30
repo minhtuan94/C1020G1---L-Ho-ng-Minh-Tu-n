@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập</title>
+</head>
+<body>
+<form action="exercise.html" method="get">
+    <h3>Nhập điểm của sinh viên</h3> <br>
+    <input type="number" id="math" placeholder="Nhập điểm Toán">
+    <input type="number" id="physic" placeholder="Nhập điểm Lý">
+    <input type="number" id="medical" placeholder="Nhập điểm Hóa">
+    <input type="button" onclick="average()" value="Tính điểm trung bình">
+    <p id="kq1"></p>
+    <p id="kq"></p>
+    <hr>
+    <h3>Đổi độ C sang độ F</h3> <br>
+    <input type="number" id="C" placeholder="Nhập độ C">
+    <input type="button" onclick="changeF()" value="Chuyển đổi độ F">
+    <p id="kq2"></p>
+    <hr>
+    <h3>Tính diện tích hình tròn</h3> <br>
+    <input type="number" id="num1" placeholder="Nhập bán kính">
+    <input type="button" onclick="dtht()" value="Tính diện tích hình tròn">
+    <p id="kq3"></p>
+    <hr>
+    <h3>Chu vi hình tròn</h3> <br>
+    <input type="number" id="num2" placeholder="Nhập bán kính">
+    <input type="button" onclick="cvht()" value="tính chu vi hình tròn">
+    <p id="kq4"></p>
+    <hr>
+    <h3>Ứng dụng chuyển đổi tiền tệ</h3>
+    <table>
+        <tr>
+            <th>Amount</th><th>From Currency</th><th>To Currency</th><th></th>
+        </tr>
+        <tr>
+            <th><input type="number" id="amount"></th>
+            <th><select id="from">
+                <option value="VND">VietNam</option>
+                <option value="USD">USD</option>
+            </select></th>
+            <th><select id="to">
+                <option value="VND">VietNam</option>
+                <option value="USD">USD</option>
+            </select></th>
+            <th><input type="button" onclick="changeMoney()" value="Convert"></th>
+        </tr>
+    </table>
+    <p id="showMoney"></p>
+    <hr>
+    <h3>Caculator</h3>
+    <input type="number" id="n1">
+    <input type="number" id="n2"> <br>
+    <input type="button" onclick="add()" value="Addition">
+    <input type="button" onclick="sub()" value="Subtraction">
+    <input type="button" onclick="mul()" value="multiplication">
+    <input type="button" onclick="div()" value="division">
+    <p id="showCalc"></p>
+</form>
+</body>
+<script>
+    // Bài 1: Viết chương trình nhập điểm của một sinh viên cho các môn: Vật lý, Hóa học, và Sinh học. Sau đó hiển thị điểm trung bình và tổng của những điểm này.
+    // Bài 2: Viết chương trình nhập một giá trị là độ 0C (Celsius) và chuyển nó sang độ 0F (Fahrenheit). [Hướng dẫn: C/5 = (F-32)/9]
+    // Bài 3: Viết chương trình tính diện tích hình tròn
+    // Bài 4: Viết chương trình chu vi hình tròn
+    function average() {
+        let a = document.getElementById("math").value;
+        let b = document.getElementById("physic").value;
+        let c = document.getElementById("medical").value;
+        let average = (a+b+c)/3;
+        let sum = a+b+c;
+        document.getElementById("kq1").innerText = average;
+        document.getElementById("kq").innerText = sum;
+    }
+    function changeF() {
+        let d = document.getElementById("C").value;
+        document.getElementById("kq2").innerText = d/5 *9+32;
+    }
+    function cvht() {
+        let e = document.getElementById("num2").value;
+        document.getElementById("kq4").innerText = e*2*3.14;
+    }
+    function dtht() {
+        let f = document.getElementById("num1").value;
+        document.getElementById("kq3").innerText = f*f*3.14;
+    }
+    //chuyển đổi tiền tệ
+    function changeMoney() {
+        let z = document.getElementById("amount").value;
+        let from = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        if (from === "VND" && to === "USD") {
+            document.getElementById("showMoney").innerText = z / 23000;
+        } else if (from === "USD" && to === "VND") {
+            document.getElementById("showMoney").innerText = z * 23000;
+        } else {
+            document.getElementById("showMoney").innerText = z;
+        }
+    }
+    //máy tính
+    let g = document.getElementById("n1");
+    let h = document.getElementById("n2");
+    function add() {
+
+        document.getElementById("showCalc").innerText = parseInt(g.value) + parseInt(h.value);
+    }
+    function sub() {
+
+        document.getElementById("showCalc").innerText = (g.value) - (h.value);
+    }
+    function mul() {
+
+        document.getElementById("showCalc").innerText = g.value * h.value;
+    }
+    function div() {
+
+        document.getElementById("showCalc").innerText = g.value / h.value;
+    }
+</script>
+</html>

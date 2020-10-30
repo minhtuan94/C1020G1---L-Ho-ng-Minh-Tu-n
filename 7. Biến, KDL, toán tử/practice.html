@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành</title>
+</head>
+<body>
+<input type="number" id="a" placeholder="Nhập số a">
+<input type="number" id="b" placeholder="Nhập số b">
+<button onclick="checkChiahet()">Kiểm tra chia hết</button>
+<button onclick="dthcn()">Tính diện tích hình chữ nhật</button>
+<p id="show"></p>
+<p id="showArea"></p>
+<script>
+    // Khai báo
+    //bài 1
+    let f = 20.5;
+    let b = true;
+    let s = 'Hà Nội';
+
+    document.write('f = ' + f);
+    document.write('<br/>');
+    document.write('b = ' + b);
+    document.write('<br/>');
+    document.write('s = ' + s);
+    document.write('<br/>');
+    //bài 2
+    let width = 20;
+    let height = 10;
+    let area = width * height;
+    document.write('Area = ' + area);
+    //bài 3
+
+    function checkChiahet() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        if (a%b===0) {
+            document.getElementById("show").innerText = "a là bội số của b";
+        }else {
+            document.getElementById("show").innerText = "a không phải là bột số của b";
+        }
+    }
+    // ======================================================================================
+    //Toán tử
+    function dthcn() {
+    let a = parseInt(document.getElementById("a").value);
+    let b = parseInt(document.getElementById("b").value);
+        document.getElementById("showArea").innerText ="diện tích hình chữ nhật là: " + a*b;
+    }
+</script>
+</body>
+</html>
