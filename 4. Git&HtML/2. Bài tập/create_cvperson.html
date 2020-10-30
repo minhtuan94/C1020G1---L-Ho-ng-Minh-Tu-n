@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo cv cá nhân</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            display: block;
+            width: 200px;
+            margin-left: 20px;
+            padding: 20px;
+        }
+
+        a {
+            margin-left: 20px;
+
+
+        }
+
+
+        .blog {
+            font-size: 50px;
+            color: red;
+            display: inline;
+            padding-right: 800px;
+            position: relative;
+            left: 700px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .avatar_image {
+            border-radius: 50%;
+            width: 100px;
+            float: left;
+        }
+
+        html {
+            font-family: 'BeVietnam', sans-serif;
+        }
+
+        .container { /*element cha*/
+            /*giới hạn bề rộng là 1140*/
+            width: 1140px;
+            /*điều chỉnh element này ra giữa*/
+            margin: 0 auto;
+            background-color: lavender;
+            padding: 20px /*chữ thụt vào bên trong so với màu*/
+        }
+
+        .content {
+            /*phần này bề rộng chỉ chứa 75% của lớp cha*/
+            width: 75%;
+            float: left;
+        }
+
+        form {
+            width: 25%;
+            float: left;
+        }
+
+        input, textarea {
+            display: block;
+        }
+
+        input {
+            margin: 20px;
+            width: 200px;
+            padding: 10px 20px;
+        }
+
+        h2 {
+            color: purple;
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+        .hoten {
+            float: left;
+            margin-top: 100px;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+    </style>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="date">
+            <h2>HÃY TRÂN TRỌNG NHỮNG NGƯỜI LUÔN BÊN CẠNH TA</h2>
+        </div>
+        <p>
+            Có đôi khi chúng ta cho rằng cuộc sống hạnh phúc là phải có những cuộc vui thâu đêm suốt sáng mà quên mất
+            rằng với ai đó được nhìn thấy chúng ta ăn cơm hằng ngày là lẽ sống của cuộc đời họ.
+<br>
+            Có đôi khi, chúng ta mãi miết tạo ra những mối quan hệ mới để cho cuộc sống bớt trống trải mà quên mất rằng
+            có những người bạn thân thiết mà chỉ đến khi mất họ rồi bạn mới thật sự hiểu cô đơn là gì
+            <br>
+            Có đôi khi, chúng ta kiếm thật nhiều tiền nhằm mua tình cảm của những người mới quen mà quên mất rằng ở đâu
+            đó, luôn có một người trao cho chung ta cả trái tim mà không đòi hỏi bất kỳ điều gì
+            <br>
+            Có đôi khi , trong đỉnh cao của sự nghiệp, chúng ta cứ thế đắm chìm trong những lời hứa tân bốc nịnh nọt của
+            những kẻ xa lạ mà quên mất rằng, ở nơi đó nó vẫn trung thành, hi sinh vì chúng ta ngay cả khi chúng ta ở
+            dưới đáy của xã hội
+            <br>
+            Hãy luôn nhớ rằng, ở đâu đó, vẫn luôn có một người chờ đợi ta, cần ta che chở, quan tâm
+            <br>
+            Hãy luôn nhớ rằng, khi chúng ta khó khăn, những người ở bên cạnh ta, đó có thể là bạn bè, là người thân
+            thương, là gia đình. Họ đáng để chúng ta trân trọng.
+            <br>
+            Hãy luôn nhớ rằng, luôn có một nơi để về mà người ta gọi là gia đình.
+            <br>
+            Và hãy hết sức trân trọng những người tuyệt vời, những điều tuyệt vời xung quanh ta, vì họ luôn muốn ta tốt
+            hơn, vì chỉ khi có những người thân yêu bên cạnh ta thì đó mới là cuộc sống ý nghĩa.
+        </p>
+        <hr>
+    </div>
+    <form>
+        <textarea cols="30" rows="10" placeholder="Hãy điền bình luận của bạn vào đây"></textarea>
+        <input type="submit" value="Gửi đến blog của tôi"><br>
+    </form>
+    <div class="clearfix"></div>
+    <div class="avatar">
+        <img style="width: 200px;" class="avatar_image"
+             src="https://mail.google.com/mail/u/0?ui=2&ik=43c9f1714d&attid=0.1&permmsgid=msg-f:1638119757450264298&th=16bbc53d825f3eea&view=att&disp=safe&realattid=f_jxoh12090"
+             alt="photo2">
+    </div>
+    <div class="hoten">
+        Lê Hoàng Minh Tuấn
+    </div>
+    <div class="clearfix"></div>
+    <div class="info">
+        <div>
+            <b>
+                <u style="color: red;">
+                    THÔNG TIN CƠ BẢN</u>
+            </b>
+        </div>
+        <div>
+            Số điện thoại: 07********
+        </div>
+        <div>
+            Email: minhh*******@gmail.com
+        </div>
+        <div>
+            Trạng thái: Độc thân
+        </div>
+    </div>
+</body>
+</head>
+</html>
