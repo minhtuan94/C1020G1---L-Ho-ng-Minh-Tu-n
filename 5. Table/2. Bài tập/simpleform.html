@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+    <style>
+        .container1{
+            background-color: aqua;
+            margin: 20px;
+            padding: 30px;
+        }
+        .container2{
+            background-color: yellow;
+            margin: 20px;
+            padding: 15px;
+        }
+        .table1{
+            margin: 0 auto;
+            background-color: white;
+            padding: 15px 30px 15px 30px;
+        }
+        h1{
+            text-align: center;
+            margin: 5px;
+            background-color: red;
+        }
+        h2{
+            color: blue;
+            background-color: yellowgreen;
+        }
+        input{
+            border-top: 2px black solid;
+            border-left: 2px black solid;
+            border-right: 1px black solid;
+            border-bottom: 1px black solid;
+        }
+        td{
+            padding: 0 10px 10px 0;
+            color: blue;
+        }
+        .nut{
+            border-top: 1px black solid;
+            border-left: 1px black solid;
+            border-right: 2px black solid;
+            border-bottom: 2px black solid;
+        }
+    </style>
+</head>
+<body>
+<!--Phần 1: Hãy tạo một form với các trường như sau:-->
+<div class="container1">
+    <form>
+        <table class="table1">
+            <tr>
+                <td colspan="4"><h1>SỞ THÍCH CỦA BẠN</h1></td>
+            </tr>
+            <tr>
+                <td style="color: blue">Họ và tên</td>
+                <td colspan="2"><input type="text" size="50"></td>
+            </tr>
+            <tr>
+                <td style="color: blue">Email</td>
+                <td colspan="2"><input type="email" size="30"></td>
+            </tr>
+            <tr>
+                <td style="color: blue">Sở thích</td>
+                <td style="color: orange"><input type="checkbox" name="fav" value="Thể Thao">Thể Thao</td>
+                <td style="color: orange"><input type="checkbox" name="fav" value="Âm nhạc">Âm nhạc</td>
+                <td style="color: orange"><input type="checkbox" name="fav" value="Đọc sách">Đọc sách</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="color: orange"><input type="checkbox" name="fav" value="Lướt web">Lướt web</td>
+                <td style="color: orange"><input type="checkbox" name="fav" value="Chơi game">Chơi game</td>
+                <td style="color: orange"><input type="checkbox" name="fav" value="Điện ảnh">Điện ảnh</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="color: orange"><input type="checkbox" name="fav" value="Du lịch">Du lịch</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input class="nut" type="submit" name="subMit" value="Gửi thông tin"></td>
+                <td><input class="nut" type="reset" name="reSet" value="Nhập lại"></td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+<hr>
+<!--Phần 2: Tạo một form đăng ký học viên với cấu trúc-->
+<div class="container2">
+    <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+    <form>
+        <table>
+            <tr>
+                <td>Họ và tên</td>
+                <td><input type="text" name="fullname"></td>
+            </tr>
+            <tr>
+                <td>Ngày sinh</td>
+                <td><input type="date" name="birthday"></td>
+            </tr>
+            <tr>
+                <td>Giới tính</td>
+                <td style="color: black"><input type="radio" name="gender" value="Nam">Nam<input type="radio" name="gender" value="Nữ">Nữ</td>
+            </tr>
+            <tr>
+                <td style="color: blue; display: flex"> <label style="display: inline-block;align-self: center;">Địa chỉ</label></td>
+                <td><textarea cols="20" rows="5"></textarea></td>
+            </tr>
+            <tr>
+                <td>Lớp</td>
+                <td>
+                    <select name="class">
+                        <option>--Chọn lớp--</option>
+                        <option>C0920G1</option>
+                        <option>C1020G1</option>
+                        <option>C1120G1</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td><input type="number" name="phone"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="nut" type="submit" name="sm" value="Đăng ký">
+                    <input class="nut" type="reset" name="rs" value="Nhập lại">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

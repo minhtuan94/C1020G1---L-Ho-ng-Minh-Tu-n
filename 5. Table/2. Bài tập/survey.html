@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form lấy survey khách hàng</title>
+    <style>
+        td {
+            border: 1px solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<form>
+<h1>Maket Research Servey</h1>
+<p>Please take a few moments to complete this satisfaction survey.</p><hr>
+<p>What is your age range?</p><br>
+<select>
+    <option>18-24</option>
+    <option>24-32</option>
+    <option>32-51</option>
+</select>
+<p>What is your yearly income range?</p>
+<select>
+    <option>$0 - $25,000</option>
+    <option>$25,001 - $20,000</option>
+    <option>$50,000 - $75,001</option>
+</select>
+<p>Gender</p>
+<input type="radio" name="gender" value="Male">Male<br>
+<input type="radio" name="gender" value="Female">Female
+<p>Which of the following products have your purchased in last 2 months. Please check all that apply</p>
+<input type="checkbox" name="product" value="Product1">Product1<br>
+<input type="checkbox" name="product" value="Product2">Product2<br>
+<input type="checkbox" name="product" value="Product3">Product3
+<p>How often would you use our new product?</p>
+<input type="radio" name="useProduct" value="Daily">Daily<br>
+<input type="radio" name="useProduct" value="Weekly">Weekly<br>
+<input type="radio" name="useProduct" value="Monthly">Monthly
+<p>What would you pay for the new product?</p>
+<table>
+    <tr>
+        <th>$</th>
+        <th><input type="number" style="width: 50px">.</th>
+        <th><input type="number" style="width: 20px"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>Dollars</th>
+        <th>Cent</th>
+    </tr>
+</table>
+<p>What features would you like to see in the new product.</p>
+<textarea cols="100" rows="10"></textarea>
+<p>Please rate your level of agreement with the following statements</p>
+<table style="border: 1px solid black;border-collapse: collapse">
+    <tr>
+        <td></td>
+        <td>Strongly Disagree</td>
+        <td>Disagree</td>
+        <td>Agree</td>
+        <td>Strongly Agree</td>
+    </tr>
+    <tr>
+        <td><strong>Our products are priced fairly.</strong></td>
+        <td style="text-align: center">
+            <input type="radio" name="rate1"><br>1
+        </td>
+        <td style="text-align: center"><input type="radio" name="rate1"><br>2</th>
+        <td style="text-align: center"><input type="radio" name="rate1"><br>3</th>
+        <td style="text-align: center"><input type="radio" name="rate1"><br>4</th>
+    </tr>
+    <tr>
+        <td><strong>Our products are high quality.</strong></td>
+        <td style="text-align: center"><input type="radio" name="rate2"><br>1</th>
+        <td style="text-align: center"><input type="radio" name="rate2"><br>2</th>
+        <td style="text-align: center"><input type="radio" name="rate2"><br>3</th>
+        <td style="text-align: center"><input type="radio" name="rate2"><br>4</th>
+    </tr>
+    <tr>
+        <td><strong>You would recommend our product to a friend or <br>coworker</strong></td>
+        <td style="text-align: center"><input type="radio" name="rate3"><br>1</th>
+        <td style="text-align: center"><input type="radio" name="rate3"><br>2</th>
+        <td style="text-align: center"><input type="radio" name="rate3"><br>3</th>
+        <td style="text-align: center"><input type="radio" name="rate3"><br>4</th>
+    </tr>
+</table><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
