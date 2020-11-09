@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p style="margin-left: 600px; font-size: x-large; font-weight: bold">
+        Do you love me?
+    </p>
+    <input type="button" onclick="yes()" value="Yes" style="width: 75px;height: 35px; margin-left: 600px">
+    <div id="no" onmouseover="no()" style="width: 50px; height: 25px; text-align: center;float: right; margin-right: 750px">
+        <input type="button" value="No" style="width: 75px;height: 35px">
+    </div>
+</form>
+</body>
+<script>
+    let button = null;
+    button = document.getElementById("no");
+    function init() {
+        button = document.getElementById("no");
+        button.style.position = 'relative';
+        button.style.left = '0px';
+    }
+    function yes() {
+        alert("<3");
+    }
+    function no() {
+        let a = Math.floor(Math.random()*(window.innerWidth));//đặt biến a là ngẫu nhiên của ln
+        let b = Math.floor(Math.random()*(window.innerHeight));
+        button.style.left = a + "px";
+        button.style.top = b + "px";
+    }
+    window.onload = init;
+</script>
+</html>
