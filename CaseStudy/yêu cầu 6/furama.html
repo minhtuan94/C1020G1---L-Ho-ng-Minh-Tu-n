@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="furama.css" type="text/css">
+</head>
+<body>
+<div class="header fixed-top">
+    <h1>FURAMA RESORT</h1>
+</div>
+<div class="middle">
+    <form>
+        <table class="col-md-4">
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Họ và Tên
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="form-control" id="names" placeholder="Họ tên"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Chứng minh nhân dân
+                        </div>
+                    </th>
+                    <td>
+                        <input type="number" class="form-control" oninput="checkID()" id="cmnd"
+                               placeholder="Chứng minh nhân dân"
+                               aria-describedby="basic-addon1"><br>
+                        <p id="checkID"></p>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Ngày tháng năm sinh
+                        </div>
+                    </th>
+                    <td>
+                        <input type="date" class="form-control" id="birthday" placeholder="Ngày sinh"
+                               aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Email
+                        </div>
+                    </th>
+                    <td>
+                        <input type="email" class="form-control" id="email" placeholder="Email" aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Địa chỉ
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="form-control" id="address" placeholder="Địa chỉ" aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        Loại khách hàng
+                    </th>
+                    <td>
+                        <select class="custom-select" id="typeCustomer">
+                            <option selected>Choose...</option>
+                            <option value="Diamond">Diamond</option>
+                            <option value="Platinum">Platinum</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Member">Member</option>
+                        </select>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Giảm giá
+                        </div>
+                    </th>
+                    <td>
+                        <input type="number" class="form-control" id="discount" placeholder="Discount"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Số lượng đi kèm
+                        </div>
+                    </th>
+                    <td>
+                        <input class="form-control" type="number" id="quantityIncluded" placeholder="Số lượng đi kèm"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Số ngày thuê
+                        </div>
+                    </th>
+                    <td>
+                        <input class="form-control" type="number" id="rentDay" placeholder="Số ngày thuê"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        Loại dịch vụ
+                    </th>
+                    <td>
+                        <select class="custom-select" id="typeService">
+                            <option selected>Choose...</option>
+                            <option value="Villa">Villa-$500/ngày</option>
+                            <option value="House">House-300$/ngày</option>
+                            <option value="Room">Room-100$/ngày</option>
+                        </select>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        Loại phòng thuê
+                    </th>
+                    <td>
+                        <select class="custom-select" id="typeRoom">
+                            <option selected>Choose...</option>
+                            <option value="Vip">Vip</option>
+                            <option value="Business">Business</option>
+                            <option value="Normal">Normal</option>
+                        </select>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="showInfoCustomer()">Hiển thị</button>
+                    <button type="reset" class="btn btn-success">Nhập lại</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="addCustomer()">Thêm</button>
+                    <button type="button" class="btn btn-success" onclick="editCustomer()">Sửa</button>
+                    <button type="button" class="btn btn-success" onclick="deleteCustomer()">Xóa</button>
+                </td>
+            </tr>
+        </table>
+        <!--    hiển thị-->
+        <table class="col-md-4">
+            <tr>
+                <th>Họ tên:</th>
+                <th id="displayName"></th>
+            </tr>
+            <tr>
+                <th>Số CMND:</th>
+                <th id="displayIdCard"></th>
+            </tr>
+            <tr>
+                <th>Ngày tháng năm sinh</th>
+                <th id="displayBirthday"></th>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th id="displayEmail"></th>
+            </tr>
+            <tr>
+                <th>Địa chỉ</th>
+                <th id="displayAddress"></th>
+            </tr>
+            <tr>
+                <th>Loại khách hàng</th>
+                <th id="displayTypeCustomer">
+
+                </th>
+            </tr>
+            <tr>
+                <th>Giảm giá:</th>
+                <th id="displayDiscount"></th>
+            </tr>
+            <tr>
+                <th>Số lượng đi kèm:</th>
+                <th id="displayQuantityIncluded"></th>
+            </tr>
+            <tr>
+                <th>Số ngày thuê</th>
+                <th id="displayRentDay"></th>
+            </tr>
+            <tr>
+                <th>Loại dịch vụ</th>
+                <th id="displayTypeService">
+
+                </th>
+            </tr>
+            <tr>
+                <th>Loại phòng thuê:</th>
+                <th id="displayTypeRoom">
+                </th>
+            </tr>
+            <tr>
+                <th>Giá phải trả</th>
+                <th id="displayTotal">
+                </th>
+            </tr>
+        </table>
+        <table class="col-md-4">
+            <tr>
+                <th style="text-align: center">Các chức năng</th>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="footer" style="float: left; width: 100%;text-align: center">
+    <img src="logo.png" alt="logoFuRama" style="width: 500px;">
+    <strong><p style="text-align: center;">
+        <span>Địa chỉ: 105 Võ Nguyên Giáp, Street, Ngũ Hành Sơn, Đà Nẵng</span>
+        <br><span>Điện thoại: 0236 3847 333</span>
+    </p></strong>
+</div>
+<div id="edit"></div>
+<script src="furama.js"></script>
+</body>
+</html>

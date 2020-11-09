@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 1: Viết chương trình nhận vào một số từ hộp thoại, việc nhập kết thúc khi người dùng nhập vào giá trị -1.
+    // Mỗi giá trị nhập được sẽ được hiển thị ra và thực hiện tính tổng các giá trị đó.
+    let num = parseInt(prompt("Nhập số để bất kỳ"));
+    let total = 0;
+    while (num!==-1) {
+        num = parseInt(prompt("Nhập só bất kỳ"));
+        alert("số vừa nhập vào "+ num);
+        total += num;
+    }
+    alert("Tổng các giá trị bất kỳ: "+total);
+</script>
+</body>
+</html>

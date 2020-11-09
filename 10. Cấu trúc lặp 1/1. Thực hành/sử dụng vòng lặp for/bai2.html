@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 2</title>
+</head>
+<body>
+<script>
+    // Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.
+    let n;
+    let sum = 0;
+    do {
+        n=parseInt(prompt("Nhập vào số bất kỳ"));
+        if (n<=0||isNaN(n)) {
+            alert("yêu cầu nhập lại")
+        }
+    } while (n<=0||isNaN(n));
+    for (let i=1;i<=n;i++) {
+        sum += i;
+    }
+    alert(sum);
+</script>
+</body>
+</html>

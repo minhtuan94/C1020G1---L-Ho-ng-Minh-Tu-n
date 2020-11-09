@@ -65,20 +65,20 @@
     // Bài 3: Viết chương trình tính diện tích hình tròn
     // Bài 4: Viết chương trình chu vi hình tròn
     function average() {
-        let a = document.getElementById("math").value;
-        let b = document.getElementById("physic").value;
-        let c = document.getElementById("medical").value;
+        let a = parseInt(document.getElementById("math").value);
+        let b = parseInt(document.getElementById("physic").value);
+        let c = parseInt(document.getElementById("medical").value);
         let average = (a+b+c)/3;
         let sum = a+b+c;
-        document.getElementById("kq1").innerText = average;
-        document.getElementById("kq").innerText = sum;
+        document.getElementById("kq1").innerText = "Điểm trung bình: "+average;
+        document.getElementById("kq").innerText = "Tổng điểm: "+sum;
     }
     function changeF() {
-        let d = document.getElementById("C").value;
+        let d = parseInt(document.getElementById("C").value);
         document.getElementById("kq2").innerText = d/5 *9+32;
     }
     function cvht() {
-        let e = document.getElementById("num2").value;
+        let e = parseInt(document.getElementById("num2").value);
         document.getElementById("kq4").innerText = e*2*3.14;
     }
     function dtht() {
@@ -102,19 +102,15 @@
     let g = document.getElementById("n1");
     let h = document.getElementById("n2");
     function add() {
-
         document.getElementById("showCalc").innerText = parseInt(g.value) + parseInt(h.value);
     }
     function sub() {
-
         document.getElementById("showCalc").innerText = (g.value) - (h.value);
     }
     function mul() {
-
         document.getElementById("showCalc").innerText = g.value * h.value;
     }
     function div() {
-
         document.getElementById("showCalc").innerText = g.value / h.value;
     }
 </script>

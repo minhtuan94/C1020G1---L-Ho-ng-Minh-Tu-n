@@ -26,11 +26,11 @@
 <button onclick="checkBrowser()">Kiểm tra browser</button>
 <p id="checkbrowser"></p>
 <br>
-<input type="text" id="a">
+<input type="number" min="0" max="3" id="a">
 <button onclick="checka()">Kiểm tra a</button>
 <p id="checka"></p>
 <br>
-<input type="text" id="b">
+<input type="number" id="b">
 <button onclick="checkb()">Kiểm tra b</button>
 <p id="checkb"></p>
 <script>
@@ -68,9 +68,9 @@
         let pass = document.getElementById("pass").value;
         if (userName === 'Admin' && pass === 'TheMaster') {
             document.getElementById("checkUser").innerText = "Welcome";
-        } else if (userName == null || pass === null) {
+        } else if (userName === "" || pass === "") {
             document.getElementById("checkUser").innerText = "Canceled";
-            // alert('Canceled');
+             alert('Canceled');
         } else {
             document.getElementById("checkUser").innerText = "I don't know you";
             // alert("I don't know you");

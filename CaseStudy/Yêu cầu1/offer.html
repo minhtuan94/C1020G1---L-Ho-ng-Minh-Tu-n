@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama resort</title>
+    <link rel="stylesheet" href="offer.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="header fixed-top">
+    <h1>FURAMA RESORT</h1>
+</div>
+<div class="middle">
+    <form>
+        <table class="col-md-4">
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Họ và Tên
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="form-control" id="names" placeholder="Họ tên"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Chứng minh nhân dân
+                        </div>
+                    </th>
+                    <td>
+                        <input type="number" class="form-control" oninput="checkID()" id="cmnd"
+                               placeholder="Chứng minh nhân dân"
+                               aria-describedby="basic-addon1"><br>
+                        <p id="checkID"></p>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Ngày tháng năm sinh
+                        </div>
+                    </th>
+                    <td>
+                        <input type="date" class="form-control" id="birthday" placeholder="Ngày sinh"
+                               aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Email
+                        </div>
+                    </th>
+                    <td>
+                        <input type="email" class="form-control" id="email" placeholder="Email" aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Địa chỉ
+                        </div>
+                    </th>
+                    <td>
+                        <input type="text" class="form-control" id="address" placeholder="Địa chỉ" aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        Loại khách hàng
+                    </th>
+                    <td>
+                        <select class="custom-select" id="typeCustomer">
+                            <option selected>Choose...</option>
+                            <option value="Diamond">Diamond</option>
+                            <option value="Platinum">Platinum</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Member">Member</option>
+                        </select>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Giảm giá
+                        </div>
+                    </th>
+                    <td>
+                        <input type="number" class="form-control" id="discount" placeholder="Discount"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Số lượng đi kèm
+                        </div>
+                    </th>
+                    <td>
+                        <input class="form-control" type="number" id="quantityIncluded" placeholder="Số lượng đi kèm"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        <div class="input-group-prepend">
+                            Số ngày thuê
+                        </div>
+                    </th>
+                    <td>
+                        <input class="form-control" type="number" id="rentDay" placeholder="Số ngày thuê"
+                               aria-describedby="basic-addon1">
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        Loại dịch vụ
+                    </th>
+                    <td>
+                        <select class="custom-select" id="typeService">
+                            <option selected>Choose...</option>
+                            <option value="Villa">Villa-$500/ngày</option>
+                            <option value="House">House-300$/ngày</option>
+                            <option value="Room">Room-100$/ngày</option>
+                        </select>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <div class="input-group mb-3">
+                    <th>
+                        Loại phòng thuê
+                    </th>
+                    <td>
+                        <select class="custom-select" id="typeRoom">
+                            <option selected>Choose...</option>
+                            <option value="Vip">Vip</option>
+                            <option value="Business">Business</option>
+                            <option value="Normal">Normal</option>
+                        </select>
+                    </td>
+                </div>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" class="btn btn-success" onclick="displayCustomer()">Hiển thị</button>
+                    <button type="reset" class="btn btn-success">Nhập lại</button>
+                </td>
+                <td>
+<!--                    <input type="button" value="Thêm vào khách hàng" class="btn btn-success" id="addCustomer" onclick="addCustomer()">-->
+                </td>
+            </tr>
+        </table>
+        <!--    hiển thị-->
+<!--        <table class="col-md-4">-->
+            <p id="displayCustomer"></p>
+<!--        </table>-->
+
+    </form>
+</div>
+<div class="footer" style="float: left; width: 100%;text-align: center">
+    <img src="logo.png" alt="logoFuRama" style="width: 500px;">
+    <strong><p style="text-align: center;">
+        <span>Địa chỉ: 105 Võ Nguyên Giáp, Street, Ngũ Hành Sơn, Đà Nẵng</span>
+        <br><span>Điện thoại: 0236 3847 333</span>
+    </p></strong>
+</div>
+<script>
+    let names = document.getElementById("names");
+    let cmnd = document.getElementById("cmnd");
+    let birthday = document.getElementById("birthday");
+    let email = document.getElementById("email");
+    let address = document.getElementById("address");
+    let typeCustomer = document.getElementById("typeCustomer");
+    let discount = document.getElementById("discount");
+    let quantityIncluded = document.getElementById("quantityIncluded");
+    let rentDays = document.getElementById("rentDay");
+    let typeService = document.getElementById("typeService");
+    let typeRoom = document.getElementById("typeRoom");
+    let totalPays;
+    let temp = 0;
+    let money = 0;
+    let arrCustomer = [];
+
+    function displayCustomer() {
+        //giá theo loại dịch vụ
+        if (typeService.value === "Villa") {
+            temp = 500;
+        } else if (typeService.value === "House") {
+            temp = 300;
+        } else if (typeService.value === "Room") {
+            temp = 100;
+        }
+        //giá theo địa chỉ
+        if (address.value === "Đà Nẵng") {
+            money += 20;
+        } else if (address.value === "Huế") {
+            money += 10;
+        } else if (address.value === "Quảng Nam") {
+            money += 5;
+        }
+        //giá theo thời gian lưu trú
+        if (rentDays.value >= 7) {
+            money += 30;
+        } else if (rentDays.value >= 5) {
+            money += 20;
+        } else if (rentDays.value >= 2) {
+            money += 10;
+        }
+        //Mức giá theo loại customer
+        if (typeCustomer.value === "Diamond") {
+            money += 15;
+        } else if (typeCustomer.value === "Platinum") {
+            money += 10;
+        } else if (typeCustomer.value === "Gold") {
+            money += 5;
+        } else if (typeCustomer.value === "Silver") {
+            money += 2;
+        } else if (typeCustomer.value === "Member") {
+            money = 0;
+        }
+        totalPays = temp * rentDays.value - money;
+        // document.getElementById("displayTotal").innerText = totalPays;
+        arrCustomer.push("Họ và tên: " + names.value);
+        arrCustomer.push("Số CMND: "+cmnd.value);
+        arrCustomer.push("Ngày sinh: "+birthday.value);
+        arrCustomer.push("Email: "+email.value);
+        arrCustomer.push("Địa chỉ: "+address.value);
+        arrCustomer.push("Loại khách hàng: "+typeCustomer.value);
+        arrCustomer.push("Giảm giá: "+discount.value);
+        arrCustomer.push("Số lượng đi kèm: "+quantityIncluded.value);
+        arrCustomer.push("Số ngày thuê: "+rentDays.value);
+        arrCustomer.push("Loại dịch vụ: "+typeService.value);
+        arrCustomer.push("Loại phòng: "+typeRoom.value);
+        arrCustomer.push("Tổng tiền: "+totalPays);
+        let empty = "";
+        empty+="<input type='text' id='addCustomer'><input type='button' value='Thêm Khách hàng' onclick='addCustomer()'></br>";
+        empty += "<table class='col-md-4'>";
+        for (let i = 0; i < arrCustomer.length; i++) {
+            empty += "<tr><th>" + arrCustomer[i] + "</th>" +
+                "<td><input type='button' value='Edit' onclick='editCustomer(" + i + ")'></td>" +
+                "<td><input type='button' value='Delete' onclick='deleteCustomer(" + i + ") '></td>" +
+                "</tr>"
+        }
+        empty += "</table>";
+        document.getElementById("displayCustomer").innerHTML = empty;
+    }
+    function addCustomer() {
+        arrCustomer.push(document.getElementById("addCustomer").value);
+        document.getElementById("editCustomer").innerText = arrCustomer;
+        displayCustomer(arrCustomer);
+    }
+
+</script>
+</body>
+</html>

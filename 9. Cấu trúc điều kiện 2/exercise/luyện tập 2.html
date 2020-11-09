@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Chuyển từ độ C sang độ F</h3>
+<input type="number" id="C" oninput="exChangeCF()">
+<p id="showF"></p>
+<hr>
+<h3>Chuyển từ met sang feet</h3>
+<input type="number" id="m" oninput="exChangeMF()">
+<p id="showFeet"></p>
+<hr>
+<h3>Tính diện tích hình vuông, chữ nhật, tam giác</h3>
+<input type="number" id="canha">
+
+<button onclick="areaSquare()">Diện tích hình vuông</button>
+<br>
+<input type="number" id="canhb">
+<button onclick="areaRectangle()">Diện tích hình chữ nhật</button>
+<button onclick="areaTriangle()">Diện tích tam giác vuông</button>
+<p id="showarea"></p>
+<hr>
+<h3>Giải phương trình bậc 1</h3>
+<input type="number" id="a">
+<input type="number" id="b">
+<button onclick="ptb1()">Nghiệm phương trình</button>
+<p id="nghiem1"></p>
+<hr>
+<h3>Giải phương trình bậc 2</h3>
+<input type="number" id="a1">
+<input type="number" id="b1">
+<input type="number" id="c1">
+<button onclick="ptb2()">Nghiệm phương trình</button>
+<p id="n1"></p>
+<hr>
+<h3>Kiểm tra một số có phải là tuổi của một người không</h3>
+<input type="number" id="age" oninput="agePerson()">
+<p id="showAge"></p>
+<hr>
+<h3>Kiểm tra 3 số nhập vào có phải là 1 tam giác không</h3>
+<input type="number" id="x">
+<input type="number" id="y">
+<input type="number" id="z">
+<button onclick="checkTriang()">Kiểm tra tam giác</button>
+<p id="check"></p>
+<hr>
+<h3>Viết chương trình giá điện</h3>
+<input type="number" id="kwh" placeholder="Nhập vào tổng điện năng tiêu thụ trong tháng (kwh)">
+<button onclick="electric()">Tính tiền điện</button>
+<p id="showKwh"></p>
+<hr>
+<h3>Viết chương trình tính thuế thu nhập cá nhân</h3>
+<input type="number" id="inputTax" placeholder="tax" oninput="tax()">
+<p id="tax"></p>
+<hr>
+<h3>Viết chương trình tính lãi ngân hàng</h3>
+<input type="number" id="money" placeholder="tiền vay">
+<input type="number" id="month" placeholder="tháng vay">
+<input type="number" id="loan" placeholder="lãi vay">
+<button onclick="addMoney()">Tính lãi</button>
+<p id="addMoney"></p>
+<hr>
+<script>
+    //bài1
+    function exChangeCF() {
+        let c = document.getElementById("C").value;
+        document.getElementById("showF").innerText = "Giá trị của độ F là :" + (c * 9 / 5 + 32);
+    }
+
+    //bài2
+    function exChangeMF() {
+        let m = document.getElementById("m").value;
+        document.getElementById("showFeet").innerText = "Giá trị của Feet là" + m * 3.2808;
+    }
+
+    //tính diện tích hình vuông, chữ nhật, tam giác
+    let a = document.getElementById("canha");
+    let b = document.getElementById("canhb");
+
+    function areaSquare() {
+        document.getElementById("showarea").innerText = "Diện tích hình vuông là: " + a.value * a.value;
+    }
+
+    function areaRectangle() {
+        document.getElementById("showarea").innerText = "Diện tích hình chữ nhật là: " + a.value * b.value;
+    }
+
+    function areaTriangle() {
+        document.getElementById("showarea").innerText = "Diện tích hình tam giác vuông là: " + 1 / 2 * a.value * b.value;
+    }
+
+    //phương trình bậc 1
+    function ptb1() {
+        let numa = document.getElementById("a").value;
+        let numb = document.getElementById("b").value;
+        if (numa === 0) {
+            if (numb === 0) {
+                document.getElementById("nghiem1").innerText = "Phương trình có vô số nghiệm";
+            } else {
+                document.getElementById("nghiem1").innerText = "phương trình vô nghiệm";
+            }
+        } else {
+            if (numb === 0) {
+                document.getElementById("nghiem1").innerText = "Phương trình có nghiệm bằng 0";
+            } else {
+                document.getElementById("nghiem1").innerText = "Phương trình có nghiệm là: " + -numb / numa;
+            }
+        }
+    }
+
+    //phương trình bậc 2
+    let n1;
+    let n2;
+
+    function ptb2() {
+        let numa1 = parseInt(document.getElementById("a1").value);
+        let numb1 = parseInt(document.getElementById("b1").value);
+        let numc1 = parseInt(document.getElementById("c1").value);
+        let delta = numb1 * numb1 - 4 * numa1 * numc1;
+        if (numa1 !== 0) {
+            if (delta < 0) {
+                document.getElementById("n1").innerText = "phương trình vô nghiệm";
+            } else if (delta > 0) {
+                n1 = (-numb1 + Math.sqrt(delta)) / 2 * numa1;
+                n2 = (-numb1 - Math.sqrt(delta)) / 2 * numa1;
+                document.getElementById("n1").innerText = "phương trình có 2 nghiệm: " + n1 + " và " + n2;
+            } else {
+                n1 = (-numb1) / (2 * numa1);
+                document.getElementById("n1").innerText = "phương trình có 2 nghiệm kép: " + n1;
+            }
+        } else {
+            document.getElementById("n1").innerText = "không phù hợp với phương trình bậc 2"
+        }
+        if (numa1 + numb1 + numc1 === 0) {
+            n1 = 1;
+            n2 = numc1 / numa1;
+            document.getElementById("n1").innerText = "phương trình có 2 nghiệm: " + n1 + " và " + n2;
+        } else if (numa1 - numb1 + numc1 === 0) {
+            n1 = -1;
+            n2 = -numc1 / numa1;
+            document.getElementById("n1").innerText = "phương trình có 2 nghiệm: " + n1 + " và " + n2;
+        }
+    }
+
+    //kiểm tra tuổi của một người
+    function agePerson() {
+        let age = document.getElementById("age").value;
+        if (age < 120 && age > 0) {
+            document.getElementById("showAge").innerText = "Đây là số tuổi của người"
+        } else {
+            document.getElementById("showAge").innerText = "Đây không phải là số tuổi của người"
+        }
+    }
+
+    function checkTriang() {
+        let x = document.getElementById("x").value;
+        let y = document.getElementById("y").value;
+        let z = document.getElementById("z").value;
+        if (x > 0 && y > 0 && z > 0 && x + y || z && y + z > x || x + z > y) {
+            document.getElementById("check").innerText = "Đây là tam giác vuông"
+        } else {
+            document.getElementById("check").innerText = "Đây không phải là tam giác vuông"
+        }
+    }
+
+    let money;
+
+    function electric() {
+        let kwh = document.getElementById("kwh").value;
+        if (kwh <= 100) {
+            money = kwh * 1000;
+        }
+        if (kwh <= 150) {
+            money = 100 * 1000 + 2000 * (kwh - 100);
+        }
+        if (kwh <= 200) {
+            money = 100 * 1000 + 2000 * 50 + 2500 * (kwh - 150);
+        }
+        if (kwh > 200) {
+            money = 100 * 1000 + 2000 * 50 + 2500 * 50 + 3000 * (kwh - 200);
+        }
+        document.getElementById("showKwh").innerText = "Tiền điện: " + money;
+    }
+    function tax() {
+        let tax = parseInt(document.getElementById("inputTax").value);
+        let tax_2;
+        if (tax <= 5)
+            tax_2 = tax * 5 / 100;
+        else if (tax <= 10)
+            tax_2 = tax * 10 / 100;
+        else if (tax <= 18)
+            tax_2 = tax * 15 / 100;
+        else if (tax <= 32)
+            tax_2 = tax * 20 / 100;
+        else if (tax <= 52)
+            tax_2 = tax * 25 / 100;
+        else if (tax <= 80)
+            tax_2 = tax * 30 / 100;
+        else
+            tax_2 = tax * 35 / 100;
+        document.getElementById("tax").innerText = "thuế thu nhập cá nhân là: " + tax_2 + " triệu đồng";
+    }
+    // Bài 12
+    function addMoney() {
+        let money = parseInt(document.getElementById("money").value);
+        let month = parseInt(document.getElementById("month").value);
+        let loan = parseInt(document.getElementById("loan").value);
+        let i = 1;
+        let loan_2 = money * (loan / 100);
+        while (i < month) {
+            money = money + money * (loan / 100);
+            loan_2 = loan_2 + money * (loan / 100);
+            i++;
+        }
+        document.getElementById("addMoney").innerText = "lãi vay là " + loan_2 + " triệu đồng";
+    }
+</script>
+</body>
+</html>

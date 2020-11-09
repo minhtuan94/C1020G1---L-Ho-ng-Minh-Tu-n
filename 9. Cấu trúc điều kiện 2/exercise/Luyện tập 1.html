@@ -25,10 +25,25 @@
 <input type="number" id="x" placeholder="Nhập vào số bất kỳ">
 <input type="number" id="y" placeholder="Nhập vào số bất kỳ">
 <input type="number" id="z" placeholder="Nhập vào số bất kỳ">
-<button oninput="findMax()"></button>
+<button oninput="findMax()">Tìm số lớn nhất</button>
 <p id="findMax"></p>
-
+<hr>
+<h3>Xếp hạng học lực của học sinh</h3>
+<input type="number" id="g" placeholder="Điểm bài kiểm tra">
+<input type="number" id="h" placeholder="Điểm bài thi giữa kỳ">
+<input type="number" id="j" placeholder="Điểm bài thi cuối kỳ">
+<button onclick="students()">Xếp hạng</button>
+<p id="student"></p>
+<hr>
+<h3>Tính hoa hồng nhận được</h3>
+<input type="number" id="sale" placeholder="Nhập doanh số bán hàng" oninput="getSale()">
+<p id="rose"></p>
+<hr>
+<h3>tính cước điện thoại</h3>
+<input type="number" id="quantity" placeholder="nhập vào số lượng cuộc gọi" oninput="payPhone()">
+<p id="phone"></p>
 <script>
+    //bài1
 function checkab() {
     let a = document.getElementById("a").value;
     let b = document.getElementById("b").value;
@@ -36,6 +51,7 @@ function checkab() {
         document.getElementById("showCheckab").innerText = "số "+a+" chia hết cho "+b;
     } else {document.getElementById("showCheckab").innerText = "số "+a+" không chia hết cho "+b}
 }
+// bài2
 function printt() {
     let t = document.getElementById("t").value;
     if (t<15) {
@@ -44,26 +60,71 @@ function printt() {
         document.getElementById("printt").innerText = "đã đủ tuổi vào lớp 10";
     }
 }
+//bài3
 function checkYingYang() {
     let i = document.getElementById('i').value;
     if (i>0) {
         document.getElementById('checkYingYang').innerText = "số "+i+" lớn hơn 0";
-    }else {
+    }else if (i<0){
         document.getElementById('checkYingYang').innerText = "số "+i+" nhỏ hơn 0";
+    } else {
+        document.getElementById("checkYingYang").innerText = "số "+i+" là số 0";
     }
 }
+//bài4
 function findMax() {
     let x = document.getElementById("x").value;
     let y = document.getElementById("y").value;
     let z = document.getElementById("z").value;
     if (x>y) {
-        if (y>z) {
+        if (x>z) {
             document.getElementById("findMax").innerText = x + "là số lớn nhất"
+        } else {
+            document.getElementById("findMax").innerText = z + "là số lớn nhất"
         }
     } else {
-        if ()
+        if (y>z) {
+            document.getElementById("findMax").innerText = y + "là số lớn nhất"
+        } else {
+            document.getElementById("findMax").innerText = z + "là số lớn nhất"
+        }
     }
 }
+//bài5
+let student;
+function students() {
+    let g = document.getElementById("g").value;
+    let h = document.getElementById("h").value;
+    let j = document.getElementById("j").value;
+    student = ((g + h * 2 + j * 3) / 6);
+    if (student >= 0 && student <= 10) {
+        if (student >= 8) {
+            document.getElementById("student").innerText = "Đây là học sinh giỏi";
+        } else if (student <= 5) {
+            document.getElementById("student").innerText = "Đây là học sinh khá";
+        } else if (student <= 4) {
+            document.getElementById("student").innerText = "Đây là học sinh trung bình";
+        } else {
+            document.getElementById("student").innerText = "Đây là học sinh yếu";
+        }
+    } else {
+        document.getElementById("student").innerText = "Nhập sai số điểm";
+    }
+}
+//bài6
+    let rose;
+    function getSale() {
+        let sale = document.getElementById("sale").value;
+        rose = sale * 10/100;
+        document.getElementById("rose").innerText = rose;
+    }
+    // bài7
+let showPayPhone;
+    function payPhone() {
+        let quantity = document.getElementById('quantity').value;
+        showPayPhone = quantity*1650;
+        document.getElementById("phone").innerText = showPayPhone;
+    }
 </script>
 </body>
 </html>

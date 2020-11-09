@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // kiểm tra số nguyên tố
+    let count = 0;
+    let numbers;
+    do {
+        numbers = prompt("số nguyên tố cần kiểm tra");
+    }while (numbers<0);
+    if(numbers < 2){
+        alert(numbers+ " khong phai so nguyen to");
+    }
+    for(let i = 2; i <= Math.sqrt(numbers); i++){
+        if(numbers % i === 0){
+            count++;
+        }
+    }
+    if(count === 0){
+        alert(numbers+" la so nguyen to");
+    }else{
+        alert(numbers+" khong phai so nguyen to");
+    }
+</script>
+</body>
+</html>
