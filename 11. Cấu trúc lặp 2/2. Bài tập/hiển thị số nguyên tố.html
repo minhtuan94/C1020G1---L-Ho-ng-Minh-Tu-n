@@ -2,28 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>bt_so_nguyen_to</title>
+    <title>So nguyen to</title>
 </head>
 <body>
 <script>
-    let numbers = parseInt(prompt("Nhập 1 số để lưu số lượng số nguyên tố cần in ra"));//nhập số lượng số nguyên tố mún hiện
-    while (numbers !== 0) {//tạo điều kiện để dừng hỏi nhập số lượng số nguyên tố mún in ra
-        let count = 0;//đếm số lượng số nguyên tố cần in ra
-        let N = 2;//cho N là số nguyên tố
-        while (count < numbers) {//so sánh số lượng cần in ra và số lượng cho sẵn
-            let dem = 0;//tạo biến đếm để biết là số nguyên tố hay không
-            for (let i = 1; i <= N; i++) {//tạo biến để tìm số nguyên
-                if (N % i === 0) {//nếu số N chia hết cho i thì dem tăng 1
-                    dem += 1;
+    //hàm kiểm tra số nguyên tố
+    function isPrimeNumber(n) {
+        if (n < 2) {
+            return false;
+        } else if (n === 2) {
+            return true;
+        } else if (n % 2 === 0) {
+            return false;
+        } else {
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i === 0) {
+                    return false;
                 }
             }
-            if (dem === 2) {//nếu dem = 2 thì in N và tăng count lên 1
-                alert(N);
-                count++;//nếu count = number thì dừng đếm
-            }
-            N++;// tăng N lên 1 để tìm số nguyên tiếp theo
+            return true;
         }
-        numbers = parseInt(prompt("Nhập 1 số để lưu số lượng số nguyên tố cần in ra"));
+    }
+    //hiển thị số nguyên tố
+    let n = parseInt(prompt('Nhập số lượng số nguyên tố cần hiển thị:'));
+    let count = 0;
+    let num = 2;
+    while (count < n){
+        if(isPrimeNumber(num)){
+            document.write(num+" ");
+            count++;
+        }
+        num++;
     }
 </script>
 </body>
