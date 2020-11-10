@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //tính tổng 20 số đầu tiên trong dãy fibonacci
+    let sum = 0;
+    let arr = [];
+    let a = 1;
+    let b = 1;
+    document.write(a+"<br>");
+    document.write(b+"<br>");
+    arr.push(a);
+    arr.push(b);
+    let count = 2;
+    let c = a+b;
+    document.write(c+"<br>");
+    arr.push(c);
+    while (count<=18) {
+        a=b;
+        b=c;
+        c = a+b;
+        count++;
+        arr.push(c);
+    }
+    alert(arr);
+    for (let i=0;i<arr.length;i++) {
+        sum += arr[i];
+    }
+    alert("Tổng của 20 số fibonacci đầu tiên là: "+sum);
+</script>
+</body>
+</html>

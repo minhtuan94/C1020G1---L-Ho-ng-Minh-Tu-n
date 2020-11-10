@@ -7,33 +7,39 @@
 <body>
 <script>
     //hàm kiểm tra số nguyên tố
-    function isPrimeNumber(n) {
-        if (n < 2) {
-            return false;
-        } else if (n === 2) {
-            return true;
-        } else if (n % 2 === 0) {
-            return false;
-        } else {
-            for (let i = 2; i <= Math.sqrt(n); i++) {
-                if (n % i === 0) {
-                    return false;
+    function ktSNT(a) {
+            let check = true;
+            if (a < 2) {
+                check = false;
+            }else {
+                for (let i = 2; i <= Math.sqrt(a); i++) {
+                    if (a % i === 0) {
+                        check = false;
+                        break;
+                    }
                 }
             }
-            return true;
+
+            if (check) {
+                return true;
+            } else {
+                return false;
+            }
         }
-    }
+
     //hiển thị số nguyên tố
     let n = parseInt(prompt('Nhập số lượng số nguyên tố cần hiển thị:'));
     let count = 0;
     let num = 2;
     while (count < n){
-        if(isPrimeNumber(num)){
+        if(ktSNT(num)){
             document.write(num+" ");
             count++;
         }
         num++;
     }
+    //vòng 1: count =0; điều kiện trả về true => in ra số 2 và count tăng lên 1 giá trị
+    //vòng 2: count =1; điều kiện trả về là true
 </script>
 </body>
 </html>

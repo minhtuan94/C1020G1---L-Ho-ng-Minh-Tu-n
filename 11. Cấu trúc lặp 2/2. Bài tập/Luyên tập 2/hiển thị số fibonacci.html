@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //in dãy fibonacci
+    let a = 1;
+    let b = 1;
+    document.write(a+"  &nbsp&nbsp&nbsp&nbsp  ");
+    document.write(b+"  &nbsp&nbsp&nbsp&nbsp  ");
+    let c = a + b;
+    document.write(c+" &nbsp&nbsp&nbsp&nbsp ");
+    let count = 0;
+    while (count <100) {
+        a=b;
+        b=c;
+        c=a+b;
+        document.write(c+" &nbsp&nbsp&nbsp&nbsp ");
+        count++;
+    }
+</script>
+</body>
+</html>

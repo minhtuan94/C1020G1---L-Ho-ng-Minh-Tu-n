@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>A = P*(1+ r/n)^nt
+
+Trong đó
+
+A= giá trị tương lai
+P= số tiền gốc (đầu tư ban đầu)
+r= lãi suất danh nghĩa hàng năm
+n= số tiền lãi được nhập gốc mỗi năm
+t= số năm tiền được mượn,
+    Ví dụ: Số tiền 1500.00 đô-la được gửi tại một ngân hàng chi trả lãi suất hàng năm là 4.3%,
+    được nhập gốc đều đặn hàng quý. Tính số dư sau 6 năm
+    A: sử dụng công thức bên trên
+
+P= 1500;
+
+r= 0.043;
+
+n= 4;
+
+t= 6.
+</pre>
+<script>
+let p = parseInt(prompt("Nhập số tiền gửi ban đầu"));
+let r = parseInt(prompt("Nhập lãi suất hằng năm"));
+let n = parseInt(prompt("Nhập lãi gốc mỗi năm"));
+let t = parseInt(prompt("Nhập thời gian gửi"));
+alert("số dư sau 6 năm: "+Math.pow(p*(1+r/n),n*t));
+</script>
+</body>
+</html>

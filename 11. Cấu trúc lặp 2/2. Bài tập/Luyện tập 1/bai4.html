@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //tìm số đầu tiên trong dãy fibonacci chia hết cho 5
+    let arr = [];
+    let a = 1;
+    let b = 1;
+    document.write(a+"<br>");
+    document.write(b+"<br>");
+    arr.push(a);
+    arr.push(b);
+    let count = 2;
+    let c = a+b;
+    document.write(c+"<br>");
+    arr.push(c);
+    while (count<=18) {
+        a=b;
+        b=c;
+        c = a+b;
+        count++;
+        arr.push(c);
+    }
+    alert(arr);
+    for (let i=0; i<arr.length;i++) {
+        if (arr[i]%5 === 0) {
+            alert("Số đàu tiên trong dãy fibonacci chia hết cho 5 là: "+arr[i]);
+            break;
+        }
+    }
+</script>
+</body>
+</html>

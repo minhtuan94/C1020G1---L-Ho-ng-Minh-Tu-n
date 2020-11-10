@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //tính giai thừa của một số nguyên dương
+    let mul = 1;
+    let numbers;
+    do {
+        numbers = parseInt(prompt("Nhập vào số nguyên dương"));
+    } while (isNaN(numbers)||numbers<0);
+    for (let i=1;i<=numbers;i++) {
+        mul *= i;
+    }
+    document.write("Gia thừa của số "+numbers+" là: "+mul);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="guestNumber()">Chơi</button>
+<script>
+    //dự đoán trong khoảng từ 1 đến 9
+    function guestNumber() {
+        let N = Math.floor(Math.random() * (9 - 1) + 1);
+        let numbers = parseInt(prompt("Người dùng nhập vào số muốn đoán"));
+        alert("Số máy tính đã lựa chọn: "+N);
+        if (numbers === N) {
+            alert("Bạn đã dự đoán đúng");
+        } else {
+            alert("Bạn đã dự đoán sai");
+        }
+    }
+</script>
+</body>
+</html>
