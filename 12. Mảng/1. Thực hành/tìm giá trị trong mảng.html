@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bước 1: Nhập giá trị cần tìm từ hộp thoại và lưu vào biến value
+
+    let value = parseInt(prompt("Enter a number: "));
+    // Bước 2: Khai báo mảng x và khởi tạo giá trị ban đầu cho mảng
+
+    let numbers = [-3, 5, 1, 3, 2, 10];
+    // Bước 3: Dùng vòng lặp duyệt toàn bộ mảng x. Kiểm tra nếu một phần tử trong mảng x bằng giá trị được nhập vào thì hiển thị thông báo:
+
+        for (let i = 0; i < numbers.length; i++) {
+            if (value === numbers[i]) {
+                alert("Value " + numbers[i] + "found at " + i);
+            }
+        }
+
+</script>
+</body>
+</html>

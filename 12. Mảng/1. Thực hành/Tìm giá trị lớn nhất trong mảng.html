@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bước 1: Khai báo mảng x và khởi tạo giá trị ban đầu cho mảng
+
+    let numbers = [-3, 5, 1, 3, 2, 10];
+    // Bước 2: Khai báo biến max để lưu giá trị lớn nhất mặc định là phần tử đầu tiên trong mảng
+
+    let max = numbers[0];
+    // Bước 3: Khai báo biến index mặc định gán giá trị 0 để lưu chỉ số của phần tử lớn nhất trong mảng
+
+    let index = 0;
+    // Bước 4: Dùng vòng lặp duyệt toàn bộ mảng x từ phần tử tiếp theo đến hết mảng. Kiểm tra nếu một phần tử trong mảng x có giá trị lớn hơn max thì gáb max chính là phần tử đó và gán index bằng vị trí của phần tử đó.
+
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > max) {
+            max = numbers[i];
+            index = i;
+        }
+    }
+    // Bước 5: In ra phần tử lớn nhất và vị trí của nó trong mảng
+
+    alert("max: " + max + " at position " + index);
+</script>
+</body>
+</html>

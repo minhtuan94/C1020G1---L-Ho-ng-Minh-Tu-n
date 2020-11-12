@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+    let N;
+    do {
+        N = parseInt(prompt("Nhập vào số lương phần tử trong mảng"));
+    } while (isNaN(N));
+    let arr1 = [];
+    for (let i=0;i<N;i++) {
+        arr1[i] = parseInt(prompt("Nhập vào số thứ: "+(i+1)));
+    }
+    alert(arr1);
+    arr1.reverse();
+    alert(arr1);
+</script>
+</body>
+</html>

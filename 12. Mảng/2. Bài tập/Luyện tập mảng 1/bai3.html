@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó.
+    // In ra giá trị trung bình của các phần tử trong mảng.
+    let a = parseInt(prompt("Nhập chiều dài của mảng"));
+    let arr =new Array(a);
+    for (let i=0; i<a;i++) {
+        arr[i] = parseInt(prompt("Nhập vào phần tử thứ: "+(i+1)+" của mảng"))
+    }
+    alert("hiển thị mảng "+arr);
+    //hiện giá trị lớn nhất của mảng
+    let k = 0;
+    let max=arr[0];
+    let average;
+    let sum = 0;
+    for (let i=k;i<arr.length;i++) {
+        sum += arr[i];
+        average = sum/arr.length;
+        if (max<arr[i]) {
+            max=arr[i];
+            k = i;
+        }
+    }
+    alert("số lớn nhất của mảng: "+max+" tại vị trí: "+k);
+    //in ra giá trị trung bình
+    alert("giá trị trung bình của mảng là: "+average);
+</script>
+</body>
+</html>

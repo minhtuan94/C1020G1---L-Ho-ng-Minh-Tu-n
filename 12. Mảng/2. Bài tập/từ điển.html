@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="findWord">
+<button onclick="dictionary()">Dịch sang tiếng việt</button>
+<p id="showEng"></p>
+<script>
+let arr1 = ["con người","quái vật","ngôi nhà","cây cối"];
+let arr2 = ["person","monster","house","tree"];
+function dictionary() {
+    let word = document.getElementById('findWord').value;
+    for (let i=0;i<arr1.length;i++) {
+        if (word === arr1[i]) {
+            document.getElementById('showEng').innerText = arr2[i];
+        }
+    }
+}
+</script>
+</body>
+</html>

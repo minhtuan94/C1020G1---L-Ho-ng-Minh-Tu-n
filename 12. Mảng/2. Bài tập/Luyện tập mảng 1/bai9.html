@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+    //Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+    //Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
+    let N1;
+    do {
+        N1 = parseInt(prompt("Nhập số lượng phần tử mảng"));
+        if (isNaN(N1)||N1<0||N1>10) {
+            alert("Số không phù hợp, yêu cầu nhập lại")
+        }
+    } while (isNaN(N1)||N1<0||N1>10);
+    let a = [];
+    let b = [];
+    let c = [];
+    for (let i=0;i<N1;i++) {
+        a[i] = parseInt(prompt("Nhập phần tử thứ "+(i+1)+" của mảng a"));
+    }
+    alert("mảng a\n "+a);
+    for (let i=0;i<N1;i++) {
+        b[i] = parseInt(prompt("Nhập phần tử thứ "+(i+1)+" của mảng b"));
+    }
+    alert("mảng b\n "+b);
+    c.push(b);
+    c.push(a);
+    alert("mảng c\n "+c);
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Viết chương trình đếm số nguyên âm trong chuỗi
+    let N;
+    do {
+        N = parseInt(prompt("Nhập số lượng phần tử trong chuỗi"))
+    } while (isNaN(N));
+    let arr2 = [];
+    let count = 0;
+    for (let i =0;i<N;i++) {
+        arr2[i] = parseInt(prompt("Nhập vào phần tử thứ: "+(i+1)));
+        if (arr2[i]<0) {
+            count++;
+        }
+    }
+    alert(arr2);
+    alert("Số lượng số âm là: "+count);
+</script>
+</body>
+</html>
