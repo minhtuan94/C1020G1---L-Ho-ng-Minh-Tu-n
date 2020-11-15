@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkSNT(a) {
+        let check = true;
+        if (a < 2) {
+            check = false;
+        } else if (a === 2) {
+            check = true;
+        } else {
+            for (let i = 2; i <= Math.sqrt(a); i++) {
+                if (a % i === 0) {
+                    check = false;
+                }
+            }
+        }
+        if (check) {
+            alert("Đây là số nguyên tố");
+        } else {
+            alert("Đây không phải là số nguyên tố");
+        }
+    }
+
+    function showCheck() {
+        while (true) {
+            let tem = parseInt(prompt("Nhập số cần kiểm tra"));
+            checkSNT(tem);
+        }
+    }
+    showCheck();
+</script>
+</body>
+</html>

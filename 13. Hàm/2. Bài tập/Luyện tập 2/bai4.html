@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không.
+    // Nếu là ký tự số hàm trả về true, ngược lại trả về false.
+    function checkNAN(x) {
+        if (isNaN(x)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    while (true) {
+    let n = prompt("Nhập");
+    alert(checkNAN(n));}
+</script>
+</body>
+</html>

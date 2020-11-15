@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.
+    function Array() {
+        let n = parseInt(prompt("Nhập vào số lượng phần tử"));
+        let arr = [n];
+        for (let i=0;i<n;i++) {
+            arr[i] = parseInt(prompt("Nhập phần thử thứ "+(i+1)));
+        }
+        alert(arr);
+        alert(arr.reverse());
+    }
+    Array();
+</script>
+</body>
+</html>

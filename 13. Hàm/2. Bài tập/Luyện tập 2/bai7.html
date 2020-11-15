@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó
+
+    function exChange() {
+        let c;
+        let a =parseInt(prompt("Nhập số thứ 1"));
+        let b = parseInt(prompt("Nhập số thứ 2"));
+        document.write("Số chưa đổi: "+a+' , ' +b);
+            c = a;
+            a = b;
+            b = c;
+            document.write("<br>");
+        document.write("a = " + a + ", b = " + b);
+    }
+    exChange();
+</script>
+</body>
+</html>

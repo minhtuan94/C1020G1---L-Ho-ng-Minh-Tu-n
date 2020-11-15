@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.
+    function GTNN(a,b,c) {
+        if (a<b) {
+            if (a<c) {
+                return a;
+            } else {
+                return c;
+            }
+        } else {
+            if (a<c) {
+                return b;
+            }
+        }
+    }
+    let no1 = parseInt(prompt("Nhập vào số thứ 1"));
+    let no2 = parseInt(prompt("Nhập vào số thứ 2"));
+    let no3 = parseInt(prompt("Nhập vào số thứ 3"));
+    document.write("Số là: "+no1 + no2 + no3);
+    document.write("<br>");
+    document.write("Số nhỏ nhất là: "+GTNN(no1,no2,no3));
+</script>
+</body>
+</html>

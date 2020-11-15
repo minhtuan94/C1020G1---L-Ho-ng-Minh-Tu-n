@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    let count = 0;
+
+    function arrays() {
+        let n = parseInt(prompt("Nhập vào số lượng phần tử"));
+        let ar = [n];
+        let k = parseInt(prompt("Nhập vào số cần kiểm tra"));
+        for (let i = 0; i < n; i++) {
+            ar[i] = parseInt(prompt("Nhập phần thử thứ " + (i + 1)));
+            if (k === ar[i]) {
+                count++;
+            }
+        }
+        alert("mảng đã tạo: "+ar);
+        alert("số lần xuất hiện k: "+count++);
+    }
+
+    arrays();
+</script>
+</body>
+</html>
