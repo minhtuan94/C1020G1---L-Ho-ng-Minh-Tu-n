@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Date {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+        getDate() {
+            return this.day + "/" + this.month + "/" + this.year;
+        }
+        setDate() {
+            this.day = parseInt(prompt("Nhập ngày"));
+            this.month = parseInt(prompt("Nhập tháng"));
+            this.year = parseInt(prompt("Nhập năm"));
+        }
+    }
+    date = new Date(2,2,2007);
+    alert(date.getDate());
+    date.setDate();
+    alert(date.getDate());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(temp) {
+            this.temc = temp;
+        }
+        getTemf() {
+            return 9/5 * this.temc + 32;
+        }
+        getTemk() {
+            return this.temc + 273.15;
+        }
+    }
+    let temperature = new Temperature(25);
+    alert("Độ F: "+temperature.getTemf());
+    alert("Độ K: "+temperature.getTemk());
+</script>
+</body>
+</html>

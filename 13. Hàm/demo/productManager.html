@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Product Manager</h3>
+    <input type="text" id="newProductName" />
+    <button onclick="addNewProduct()">Add</button>
+    <h3>Display All Product</h3>
+    <p id="countProduct"></p>
+    <table id="tblProduct" border="1">
+    </table>
+    <script>
+        let productNameArray = ["Sony Experia", "Samsung Galaxy", "Nokia 6"];
+
+        function countProduct(arr) {
+            let countProduct = document.getElementById("countProduct");
+            countProduct.innerText = arr.length + " product";
+        }
+
+        function showListProduct() {
+            let tblProduct = document.getElementById("tblProduct");
+            let htmlProduct = '    <tr>\n' +
+                '        <th>No</th>\n' +
+                '        <th>Product Name</th>\n' +
+                '        <th></th>\n' +
+                '        <th></th>\n' +
+                '       </tr>';
+
+            for (let i = 0; i < productNameArray.length; i++) {
+                htmlProduct += '<tr>\n' +
+                    '        <td>' + (i + 1) + '</td>\n' +
+                    '        <td><input id="' + i + '" type="text" value="' + productNameArray[i] + '" readonly/></td>\n' +
+                    '        <td id="td' + i + '"><button onclick="changeBtnSubmit(' + i + ')">Edit</button></td>\n' +
+                    '        <td><button onclick="deleteProduct(' + i + ')">Delete</button></td>\n' +
+                    '           </tr>'
+            }
+            countProduct(productNameArray);
+            tblProduct.innerHTML = htmlProduct;
+        }
+
+        function addNewProduct() {
+            let inputNewProduct = document.getElementById("newProductName");
+            productNameArray.push(inputNewProduct.value);
+            inputNewProduct.value = "";
+            showListProduct();
+        }
+
+        function changeBtnSubmit(id) {
+            console.log(id);
+            let inputEdit = document.getElementById(id);
+            inputEdit.readOnly = false;
+            let tdEdit = document.getElementById("td" + id);
+            tdEdit.innerHTML = '<button onclick="editProduct(' + id + ')">Update</button>';
+        }
+
+        function editProduct(id) {
+            let inputEdit = document.getElementById(id);
+            productNameArray[id] = inputEdit.value;
+            showListProduct();
+        }
+
+        function deleteProduct(id) {
+            let arrTemp = [];
+            for (let i = 0; i < productNameArray.length; i++) {
+                if (i == id) {
+                    continue;
+                }
+                arrTemp[i] = productNameArray[i];
+            }
+            productNameArray = arrTemp;
+            showListProduct();
+        }
+        showListProduct();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Rectangle {
+        constructor(dai, rong, dt, cv) {
+            this.dai = dai;
+            this.rong = rong;
+            this.dt = dt;
+            this.cv = cv;
+        }
+
+        getDT() {
+            return this.dai * this.rong;
+        }
+
+        getCV() {
+            return (this.dai+this.rong)*2;
+        }
+        setDai() {
+            this.dai = parseInt(prompt("Nhập vào chiều dài"))
+        }
+        setRong() {
+            this.rong = parseInt(prompt("Nhập vào chiều rộng"));
+        }
+    }
+
+    let rectangle = new Rectangle(4,5);
+    alert(rectangle.getDT());
+    rectangle.setDai();
+    rectangle.setRong();
+    alert(rectangle.getCV());
+    alert(rectangle.getDT())
+
+</script>
+</body>
+</html>

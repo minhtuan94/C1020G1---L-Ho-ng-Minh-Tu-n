@@ -31,23 +31,24 @@
                         </div>
                     </th>
                     <td>
-                        <input type="text" class="form-control" id="names" placeholder="Họ tên"
+                        <input type="text" class="form-control" pattern="[a-zA-Z]{5,}" title="Minimum 5 letters"
+                               required id="names" placeholder="Họ tên"
                                aria-describedby="basic-addon1">
                     </td>
                 </div>
             </tr>
             <tr>
                 <div class="input-group mb-3">
-                    <th>
-                        <div class="input-group-prepend">
+                    <th style=" display: flex">
+                        <div class="input-group-prepend" style="display: inline-block;align-self: center;">
                             Chứng minh nhân dân
                         </div>
                     </th>
                     <td>
                         <input type="number" class="form-control" oninput="checkID()" id="cmnd"
                                placeholder="Chứng minh nhân dân"
-                               aria-describedby="basic-addon1"><br>
-                        <p id="checkID"></p>
+                               aria-describedby="basic-addon1">
+                        <p id="checkID" style="color: red"></p>
                     </td>
                 </div>
             </tr>
@@ -67,14 +68,16 @@
             </tr>
             <tr>
                 <div class="input-group mb-3">
-                    <th>
-                        <div class="input-group-prepend">
+                    <th style="display: flex">
+                        <div class="input-group-prepend" style="display: inline-block;align-self: center;">
                             Email
                         </div>
                     </th>
                     <td>
-                        <input type="email" class="form-control" id="email" placeholder="Email" aria-label="Username"
-                               aria-describedby="basic-addon1">
+                        <input type="email" class="form-control" id="email" oninput="checkEmail()" placeholder="Email"
+                               aria-label="Username"
+                               aria-describedby="basic-addon1"><br>
+                        <p id="checkEmail" style="color: red"></p>
                     </td>
                 </div>
             </tr>
@@ -183,15 +186,77 @@
                     <button type="reset" class="btn btn-success">Nhập lại</button>
                 </td>
                 <td>
-<!--                    <input type="button" value="Thêm vào khách hàng" class="btn btn-success" id="addCustomer" onclick="addCustomer()">-->
+                    <!--<input type="button" value="Thêm vào khách hàng" class="btn btn-success" id="addCustomer" onclick="addCustomer()">-->
                 </td>
             </tr>
         </table>
         <!--    hiển thị-->
-<!--        <table class="col-md-4">-->
-            <p id="displayCustomer"></p>
-<!--        </table>-->
+        <table class="col-md-4 tab2">
+            <tr>
+                <th>Họ tên:</th>
+                <th id="displayName"></th>
+            </tr>
+            <tr>
+                <th>Số CMND:</th>
+                <th id="displayIdCard"></th>
+            </tr>
+            <tr>
+                <th>Ngày tháng năm sinh</th>
+                <th id="displayBirthday"></th>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th id="displayEmail"></th>
+            </tr>
+            <tr>
+                <th>Địa chỉ</th>
+                <th id="displayAddress"></th>
+            </tr>
+            <tr>
+                <th>Loại khách hàng</th>
+                <th id="displayTypeCustomer">
 
+                </th>
+            </tr>
+            <tr>
+                <th>Giảm giá:</th>
+                <th id="displayDiscount"></th>
+            </tr>
+            <tr>
+                <th>Số lượng đi kèm:</th>
+                <th id="displayQuantityIncluded"></th>
+            </tr>
+            <tr>
+                <th>Số ngày thuê</th>
+                <th id="displayRentDay"></th>
+            </tr>
+            <tr>
+                <th>Loại dịch vụ</th>
+                <th id="displayTypeService">
+
+                </th>
+            </tr>
+            <tr>
+                <th>Loại phòng thuê:</th>
+                <th id="displayTypeRoom">
+                </th>
+            </tr>
+            <tr>
+                <th>Giá phải trả</th>
+                <th id="displayTotal">
+                </th>
+            </tr>
+        </table>
+        <table class="col-md-3 tab3">
+            <tr>
+                <th style="text-align: center" colspan="3">Các chức năng</th>
+            </tr>
+            <tr>
+                <td><input type='button' value='Edit' onclick='editCustomer()'></td>
+                <td><input type='button' value='Delete' onclick='deleteCustomer()'></td>
+                <td><input type='button' value='Add' onclick='addCustomer()'></td>
+            </tr>
+        </table>
     </form>
 </div>
 <div class="footer" style="float: left; width: 100%;text-align: center">
@@ -201,92 +266,6 @@
         <br><span>Điện thoại: 0236 3847 333</span>
     </p></strong>
 </div>
-<script>
-    let names = document.getElementById("names");
-    let cmnd = document.getElementById("cmnd");
-    let birthday = document.getElementById("birthday");
-    let email = document.getElementById("email");
-    let address = document.getElementById("address");
-    let typeCustomer = document.getElementById("typeCustomer");
-    let discount = document.getElementById("discount");
-    let quantityIncluded = document.getElementById("quantityIncluded");
-    let rentDays = document.getElementById("rentDay");
-    let typeService = document.getElementById("typeService");
-    let typeRoom = document.getElementById("typeRoom");
-    let totalPays;
-    let temp = 0;
-    let money = 0;
-    let arrCustomer = [];
-
-    function displayCustomer() {
-        //giá theo loại dịch vụ
-        if (typeService.value === "Villa") {
-            temp = 500;
-        } else if (typeService.value === "House") {
-            temp = 300;
-        } else if (typeService.value === "Room") {
-            temp = 100;
-        }
-        //giá theo địa chỉ
-        if (address.value === "Đà Nẵng") {
-            money += 20;
-        } else if (address.value === "Huế") {
-            money += 10;
-        } else if (address.value === "Quảng Nam") {
-            money += 5;
-        }
-        //giá theo thời gian lưu trú
-        if (rentDays.value >= 7) {
-            money += 30;
-        } else if (rentDays.value >= 5) {
-            money += 20;
-        } else if (rentDays.value >= 2) {
-            money += 10;
-        }
-        //Mức giá theo loại customer
-        if (typeCustomer.value === "Diamond") {
-            money += 15;
-        } else if (typeCustomer.value === "Platinum") {
-            money += 10;
-        } else if (typeCustomer.value === "Gold") {
-            money += 5;
-        } else if (typeCustomer.value === "Silver") {
-            money += 2;
-        } else if (typeCustomer.value === "Member") {
-            money = 0;
-        }
-        totalPays = temp * rentDays.value - money;
-        // document.getElementById("displayTotal").innerText = totalPays;
-        arrCustomer.push("Họ và tên: " + names.value);
-        arrCustomer.push("Số CMND: "+cmnd.value);
-        arrCustomer.push("Ngày sinh: "+birthday.value);
-        arrCustomer.push("Email: "+email.value);
-        arrCustomer.push("Địa chỉ: "+address.value);
-        arrCustomer.push("Loại khách hàng: "+typeCustomer.value);
-        arrCustomer.push("Giảm giá: "+discount.value);
-        arrCustomer.push("Số lượng đi kèm: "+quantityIncluded.value);
-        arrCustomer.push("Số ngày thuê: "+rentDays.value);
-        arrCustomer.push("Loại dịch vụ: "+typeService.value);
-        arrCustomer.push("Loại phòng: "+typeRoom.value);
-        arrCustomer.push("Tổng tiền: "+totalPays);
-        let empty = "";
-        empty+="<input type='text' id='addCustomer'><input type='button' value='Thêm Khách hàng' onclick='addCustomer()'></br>";
-        empty += "<table class='col-md-4'>";
-        for (let i = 0; i < arrCustomer.length; i++) {
-            empty += "<tr><th>" + arrCustomer[i] + "</th>" +
-                "<td><input type='button' value='Edit' onclick='editCustomer(" + i + ")'></td>" +
-                "<td><input type='button' value='Delete' onclick='deleteCustomer(" + i + ") '></td>" +
-                "</tr>"
-        }
-        empty += "</table>";
-        document.getElementById("displayCustomer").innerHTML = empty;
-    }
-    function addCustomer() {
-        arrCustomer.push(document.getElementById("addCustomer").value);
-        document.getElementById("editCustomer").innerText = arrCustomer;
-        displayCustomer(arrCustomer);
-    }
-
-</script>
+<script src="offer.js"></script>
 </body>
 </html>

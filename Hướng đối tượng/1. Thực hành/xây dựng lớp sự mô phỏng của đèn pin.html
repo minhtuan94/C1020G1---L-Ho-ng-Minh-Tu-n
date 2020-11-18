@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bước 1: Khai báo lớp Battery
+
+    // Bởi vì lớp FlashLamp có sử dụng lớp Battery, hay nói cách khác, lớp FlashLamp phụ thuộc vào lớp Battery,
+    // do đó chúng ta sẽ bắt đầu khai báo lớp Battery trước.
+        class Battery {
+            constructor(energy) {
+                this.energy = energy;
+            }
+            setEnergy(energy) {
+                this.energy = energy;
+            }
+            getEnergy() {
+                return this.energy;
+            }
+            decreaseEnergy() {
+                if (this.energy > 0) {
+                    this.energy--;
+                }
+            }
+        }
+    // Bước 2: Khai báo lớp FlashLamp
+        class FlashLamp {
+            constructor(status, battery) {
+                this.status = status;
+                this.battery = battery;
+            }
+            getBatteryInfo() {
+                return this.battery.getEnergy();
+            }
+            setBattery() {
+                this.battery = battery;
+            }
+            light() {
+                if(this.status){
+                    return "Lighting";
+                } else {
+                    return "Not lighting";
+                }
+            }
+            turnOn() {
+                this.status = true;
+            }
+            turnOff() {
+                this.status = false;
+            }
+        }
+    let battery = new Battery();
+    battery.setEnergy(parseInt(prompt("Nhập số pin")));
+
+    let flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery);
+
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    flashLamp.light();
+
+    document.write("Turn on<br/>");
+    flashLamp.turnOn();
+    flashLamp.light();
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+
+    document.write("Turn off<br/>");
+    flashLamp.turnOff();
+    flashLamp.light();
+</script>
+</body>
+</html>

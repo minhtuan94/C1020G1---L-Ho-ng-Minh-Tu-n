@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Circle {
+        constructor(radius,color) {
+            this.radius = radius;
+            this.color = color;
+        }
+        getRadius() {
+            return this.radius;
+        }
+        getArea() {
+            return Math.PI*this.radius*this.radius;
+        }
+    }
+    circle = new Circle(parseInt(prompt("Nhập vào bán kính")));
+    alert("Diện tích hình tròn là: "+circle.getArea());
+</script>
+</body>
+</html>

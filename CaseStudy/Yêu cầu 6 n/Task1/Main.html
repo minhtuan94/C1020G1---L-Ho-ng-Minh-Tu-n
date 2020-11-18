@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="customer.js"></script>
+    <title>Task1</title>
+</head>
+<body>
+<script>
+    let regexEmail = /\S+@\S+\.\S+/;
+    let regexBirthday = /^([0-9]{2})\/([0-9]{2})\/([0-9]{4})$/;
+    let regexCMND = /^[\d]{8,8}$/;
+    let listCustomer = [];
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1.Add new Customer." + "\n2.Display Information Customer" + "\n3.Display total pays Customer" + "\n4.Edit Information Customer" + "\n5.Delete Customer" + "\n6.Exit"));
+    switch (choose) {
+        case 1: {
+            addNewCustomer();
+            break;
+        }
+        case 2: {
+            displaycustomer();
+            break;
+        }
+        case 3: {
+            displayTotalpays();
+        }
+        default: {
+            alert("Failed");
+        }
+        }
+    }
+    function displaycustomer() {
+
+    }
+    function displayTotalpays() {
+        let temp = "";
+        for (let i = 0; i<listCustomer.length;i++) {
+            temp += i + ". Name: " + listCustomer[i].getName() + "\n";
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Total pays của bạn là: " + listCustomer[chooseDisplay].totalPays())
+    }
+    function addNewCustomer() {
+        let checkvalid=false;
+        let cus = new Customer();
+        let name = prompt("Input name: ");
+        let cmnd = prompt("Input cmnd: ");
+        let email = prompt("Input email: ");
+        let birthday = prompt("Input birthday: ");
+        do {
+            cmnd = prompt("Input cmnd: ");
+            if (regexCMND.test(cmnd)) {
+                checkvalid = true;
+            } else {
+                alert("Chứng minh nhân dân không hợp lệ")
+            }
+        } while (!checkvalid);
+        checkvalid = false;
+        do {
+            birthday = prompt("Input birthday: ");
+            if (regexBirthday.test(birthday)) {
+                checkvalid = true;
+            } else {
+                alert("Ngày sinh bạn nhập không hợp lệ");
+            }
+        } while (!checkvalid);
+        checkvalid = false;
+        do {
+            email = prompt("Input email: ");
+            if (regexEmail.test(email)) {
+                checkvalid = true; // để thoát vòng lặp
+            } else {
+                alert("email không hợp lệ, yêu cầu nhập lại");
+            }
+        } while (!checkvalid);
+        checkvalid = false;
+        let address = prompt("Input address: ");
+        let typeService = prompt("Input typeService: ");
+        let typeRoom = prompt("Input typeRoom: ");
+        let typeCustomer = prompt("Input typeCustomer: ");
+        let discount = prompt("Input discount: ");
+        let quantityIncluded = prompt("Input quantityIncluded: ");
+        let rentDays = prompt("Input renDays: ");
+        cus.setName(name);
+        cus.setCMND(cmnd);
+        cus.setBirthday(birthday);
+        cus.setEmail(email);
+        cus.setAddress(address);
+        cus.setTypeCustomer(typeCustomer);
+        cus.setTypeRoom(typeRoom);
+        cus.setTypeService(typeService);
+        cus.setDiscount(discount);
+        cus.setQuantityIncluded(quantityIncluded);
+        cus.setRentDays(rentDays);
+        listCustomer.push(cus);
+        alert("Bạn đã thêm thành công");
+        displayMainMenu();
+    }
+    displayMainMenu();
+</script>
+</body>
+</html>
